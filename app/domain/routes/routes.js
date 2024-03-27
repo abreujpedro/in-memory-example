@@ -3,14 +3,14 @@ const pongController = require("../../infrastructure/controllers/pong-controller
 
 const handleRoute = (connection, route, args) => {
   const echoRoute = [
-    "*2\r\n$4\r\necho\r\n$3\r\n",
+    "echo",
     () => {
       echoController(connection, args);
     },
   ];
 
   const pongRoute = [
-    "*1\r\n$4\r\nping\r\n",
+    "ping",
     () => {
       pongController(connection);
     },
