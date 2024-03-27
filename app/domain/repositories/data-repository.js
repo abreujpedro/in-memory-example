@@ -3,15 +3,15 @@ class DataRepository {
     this.strategy = strategy;
   }
 
-  async findById(id) {
+  findById(id) {
     return this.strategy.findById(id);
   }
 
-  async save(key, data) {
+  save(key, data) {
     return this.strategy.save(key, data);
   }
 
-  async remove(id) {
+  remove(id) {
     return this.strategy.remove(id);
   }
 }

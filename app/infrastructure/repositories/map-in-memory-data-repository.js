@@ -7,15 +7,15 @@ class MapInMemoryDataRepository extends DataRepositoryStrategy {
     this.data = dataInMemory;
   }
 
-  async findById(id) {
+  findById(id) {
     return this.data.get(id);
   }
 
-  async save(key, data) {
+  save(key, data) {
     this.data.set(key, data);
   }
 
-  async remove(id) {
+  remove(id) {
     this.data.delete(id);
   }
 }

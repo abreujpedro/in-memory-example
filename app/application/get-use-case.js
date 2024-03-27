@@ -7,6 +7,10 @@ function getData(key) {
 
   console.log("return data", data);
 
+  if (data === undefined) {
+    return null;
+  }
+
   return data;
 }
 

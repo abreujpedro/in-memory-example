@@ -4,8 +4,11 @@ const getController = (connection, args) => {
   const keyToGet = args[1];
 
   const data = getData(keyToGet);
-
-  connection.write(`$${data.length}\r\n${data}\r\n`);
+  if (data === null) {
+    connection.write(`$-1\r\n`);
+  } else {
+    connection.write(`$${data.length}\r\n${data}\r\n`);
+  }
 };
 
 module.exports = getController;

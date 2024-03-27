@@ -7,15 +7,15 @@ class DataRepositoryStrategy {
     }
   }
 
-  async findById(id) {
+  findById(id) {
     throw new Error("Abstract method findById must be implemented.");
   }
 
-  async save(object) {
+  save(object) {
     throw new Error("Abstract method save must be implemented.");
   }
 
-  async remove(id) {
+  remove(id) {
     throw new Error("Abstract method remove must be implemented.");
   }
 }
