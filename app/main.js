@@ -18,8 +18,9 @@ let portValue = 6379;
 
 if (portIndex !== -1 && args[portIndex + 1]) {
   portValue = Number(args[portIndex + 1]);
-} else {
 }
+
+console.log("port", portValue, "args", args);
 
 const server = net.createServer((connection) => {
   connection.on("close", () => {
