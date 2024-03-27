@@ -5,7 +5,7 @@ const setController = (connection, args) => {
 
   const dataToSet = args[3];
 
-  const expDateString = args[5];
+  const expDateString = args[7];
 
   const expDate = Number(expDateString) || null;
 
