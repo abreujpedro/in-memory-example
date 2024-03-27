@@ -1,0 +1,16 @@
+{
+  "name": "codecrafters-redis-javascript",
+  "version": "1.0.0",
+  "description": "[![progress-banner](https://backend.codecrafters.io/progress/redis/5a74b0dc-7ac4-46a1-b06f-e500b84ab49d)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.codecrafters.io/9a52ba1464db9533"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
