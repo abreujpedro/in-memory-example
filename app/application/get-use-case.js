@@ -3,7 +3,7 @@ const repoInstance = require("../infrastructure/factories/in-memory-repository-f
 function getData(key) {
   const dataRepository = repoInstance;
 
-  dataRepository.findById(key);
+  return dataRepository.findById(key);
 }
 
 module.exports = getData;
