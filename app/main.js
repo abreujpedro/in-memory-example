@@ -10,6 +10,17 @@ const {
 
 // Uncomment this block to pass the first stage
 
+const args = process.argv;
+
+const portIndex = args.indexOf("--port");
+
+let portValue = 6379;
+
+if (portIndex !== -1 && args[portIndex + 1]) {
+  portValue = Number(args[portIndex + 1]);
+} else {
+}
+
 const server = net.createServer((connection) => {
   connection.on("close", () => {
     connection.end();

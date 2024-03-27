@@ -9,8 +9,6 @@ function getData(key) {
 
   const isExpired = exp ? nowDate > exp : false;
 
-  console.log("isExpired", isExpired, "nowDate", nowDate, "exp", exp);
-
   if (data === undefined || isExpired) {
     return null;
   }
