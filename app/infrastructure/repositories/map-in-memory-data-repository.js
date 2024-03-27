@@ -12,11 +12,11 @@ class MapInMemoryDataRepository extends DataRepositoryStrategy {
   }
 
   async save(key, data) {
-    this.dados.set(key, data);
+    this.data.set(key, data);
   }
 
   async remove(id) {
-    this.dados.delete(id);
+    this.data.delete(id);
   }
 }
 
