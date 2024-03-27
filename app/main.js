@@ -5,6 +5,14 @@ const net = require("net");
 
 // Uncomment this block to pass the first stage
 const server = net.createServer((connection) => {
+  connection.on("close", () => {
+    connection.end();
+    server.close();
+  });
+
+  connection.on("data", () => {
+    connection.write("+PONG\r\n");
+  });
   // Handle connection
 });
 
