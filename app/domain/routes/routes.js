@@ -2,6 +2,7 @@ const echoController = require("../../infrastructure/controllers/echo-controller
 const pongController = require("../../infrastructure/controllers/pong-controller.js");
 const setController = require("../../infrastructure/controllers/set-controller.js");
 const getController = require("../../infrastructure/controllers/get-controller.js");
+const infoController = require("../../infrastructure/controllers/info-controller.js");
 
 const handleRoute = (connection, route, args) => {
   const echoRoute = [
@@ -32,11 +33,24 @@ const handleRoute = (connection, route, args) => {
     },
   ];
 
+  const infoRoute = [
+    "info",
+    () => {
+      infoController(connection, args);
+    },
+  ];
+
   const notFound = () => {
     connection.write("-ERR Not Found\r\n");
   };
 
-  const routeMap = new Map([echoRoute, pongRoute, setRoute, getRoute]);
+  const routeMap = new Map([
+    echoRoute,
+    pongRoute,
+    setRoute,
+    getRoute,
+    infoRoute,
+  ]);
 
   const controller = routeMap.get(route) ?? notFound;
 
