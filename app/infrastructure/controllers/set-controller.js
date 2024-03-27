@@ -5,7 +5,11 @@ const setController = (connection, args) => {
 
   const dataToSet = args[3];
 
-  setData(keyToSet, dataToSet);
+  const expDateString = args[5];
+
+  const expDate = Number(expDateString) || null;
+
+  setData(keyToSet, dataToSet, expDate);
 
   connection.write(`+OK\r\n`);
 };

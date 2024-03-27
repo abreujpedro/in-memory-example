@@ -3,11 +3,13 @@ const repoInstance = require("../infrastructure/factories/in-memory-repository-f
 function getData(key) {
   const dataRepository = repoInstance;
 
-  const data = dataRepository.findById(key);
+  const { data, exp } = dataRepository.findById(key);
 
-  console.log("return data", data);
+  const nowDate = new Date();
 
-  if (data === undefined) {
+  const isExpired = exp ? nowDate > exp : false;
+
+  if (data === undefined || isExpired) {
     return null;
   }
 
