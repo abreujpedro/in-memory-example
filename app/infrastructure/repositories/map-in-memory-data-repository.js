@@ -1,3 +1,4 @@
+const DataRepositoryStrategy = require("../../domain/repositories/data-repository-strategy.js");
 const dataInMemory = require("../in-memory/in-memory-instance.js");
 
 class MapInMemoryDataRepository extends DataRepositoryStrategy {
