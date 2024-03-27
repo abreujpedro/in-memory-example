@@ -20,8 +20,6 @@ if (portIndex !== -1 && args[portIndex + 1]) {
   portValue = Number(args[portIndex + 1]);
 }
 
-console.log("port", portValue, "args", args);
-
 const server = net.createServer((connection) => {
   connection.on("close", () => {
     connection.end();
@@ -38,4 +36,4 @@ const server = net.createServer((connection) => {
   // Handle connection
 });
 
-server.listen(6379, "127.0.0.1");
+server.listen(portValue, "127.0.0.1");
