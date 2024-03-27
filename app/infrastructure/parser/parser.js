@@ -10,7 +10,7 @@ const parserArgs = (buffer) => {
   const splitted = command.split("\r\n");
   const isThereArgs = splitted[4];
 
-  const args = isThereArgs ? splitted[4].toLowerCase() : null;
+  const args = isThereArgs ? splitted.slice(3) : null;
 
   return args;
 };
