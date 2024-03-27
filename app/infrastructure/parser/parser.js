@@ -8,7 +8,7 @@ const parserCommand = (buffer) => {
 const parserArgs = (buffer) => {
   const command = buffer.toString().trim();
   const splitted = command.split("\r\n");
-  return splitted[4].toLowerCase();
+  return splitted[4].toLowerCase() || null;
 };
 
 module.exports = { parserCommand, parserArgs };
